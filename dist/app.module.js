@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
-const http_module_1 = require("./http.module");
+const http_module_1 = require("./infra/http.module");
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const prisma_service_1 = require("./prisma.service");
+const app_controller_1 = require("./infra/app.controller");
+const prisma_service_1 = require("./infra/prisma.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
