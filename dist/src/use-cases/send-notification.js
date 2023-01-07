@@ -4,6 +4,9 @@ exports.SendNotification = void 0;
 const content_1 = require("../application/entities/content");
 const notification_1 = require("../application/entities/notification");
 class SendNotification {
+    constructor(notificationsRespository) {
+        this.notificationsRespository = notificationsRespository;
+    }
     async execute(request) {
         const { recipientId, content, category } = request;
         const notification = new notification_1.Notification({
@@ -11,6 +14,7 @@ class SendNotification {
             content: new content_1.Content(content),
             category,
         });
+        await this.notificationsRespository.create(notification);
         return {
             notification,
         };

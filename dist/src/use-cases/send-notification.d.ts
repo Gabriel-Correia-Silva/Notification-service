@@ -1,4 +1,5 @@
-import { Notification } from "src/application/entities/notification";
+import { Notification } from 'src/application/entities/notification';
+import { NotificationsRespository } from '../application/repositories/notifications-respository';
 interface SendNotificationResquest {
     recipientId: string;
     content: string;
@@ -8,6 +9,8 @@ interface SendNotificationResponse {
     notification: Notification;
 }
 export declare class SendNotification {
+    private notificationsRespository;
+    constructor(notificationsRespository: NotificationsRespository);
     execute(request: SendNotificationResquest): Promise<SendNotificationResponse>;
 }
 export {};
