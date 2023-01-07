@@ -8,16 +8,16 @@ export class AppController {
   constructor(private readonly prisma: PrismaService) {}
 
   @Get()
-  list(){
+  list() {
     return this.prisma.notification.findMany();
   }
 
   @Post()
-  async create(@Body() body: CreateNotificationBody){
-    const{category, content, recipientId} = body
+  async create(@Body() body: CreateNotificationBody) {
+    const { category, content, recipientId } = body;
 
     await this.prisma.notification.create({
-      data:{
+      data: {
         id: randomUUID(),
         content,
         recipientId,
@@ -27,4 +27,3 @@ export class AppController {
     //return this.prisma.notification.findMany();
   }
 }
- 

@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Notification = void 0;
 class Notification {
     constructor(props) {
-        this.props = props;
+        var _a;
+        this.props = Object.assign(Object.assign({}, props), { createAt: (_a = props.createAt) !== null && _a !== void 0 ? _a : new Date() });
     }
     set recipientId(recipientId) {
         this.props.recipientId = recipientId;
@@ -28,9 +29,6 @@ class Notification {
     }
     get readAt() {
         return this.props.readAt;
-    }
-    set createAt(createAt) {
-        this.props.createAt = createAt;
     }
     get createAt() {
         return this.props.createAt;
