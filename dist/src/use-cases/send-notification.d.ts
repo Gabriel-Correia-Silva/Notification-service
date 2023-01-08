@@ -1,5 +1,5 @@
 import { Notification } from 'src/application/entities/notification';
-import { NotificationsRespository } from '../application/repositories/notifications-respository';
+import { NotificationsRespository } from 'src/application/repositories/notifications-respository';
 interface SendNotificationResquest {
     recipientId: string;
     content: string;

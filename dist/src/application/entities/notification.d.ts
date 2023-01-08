@@ -8,10 +8,12 @@ export interface NotificationProps {
     createAt: Date;
 }
 export declare class Notification {
+    private _id;
     private props;
     constructor(props: Replace<NotificationProps, {
         createAt?: Date;
     }>);
+    get id(): string;
     set recipientId(recipientId: string);
     get recipientId(): string;
     set content(content: Content);
